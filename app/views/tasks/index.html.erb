@@ -1,0 +1,17 @@
+<div class="container">
+<h1>Tasks</h1>
+<%= link_to("Create new Task", new_task_path) %>
+
+<ul>
+   <%@tasks.each do |task|%>
+    <li>
+      <% if task[:completed] %>
+        ✔️
+      <%else%>
+        to do:
+      <%end%>
+      <%= link_to task.title, task_path(task)%>
+    </li>
+  <%end%>
+</ul>
+</div>

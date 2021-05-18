@@ -1,0 +1,12 @@
+<div class="container">
+  <p><span>Task: </span> <%=@task[:title]%></p>
+  <p><span>Description: </span> <%=@task[:details]%></p>
+  <div class="buttons">
+    <p> <%= link_to "edit", edit_task_path(@task) %></p>
+    <p> <%= link_to "delete",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></p>
+  </div>
+  <p><%= link_to "return", tasks_path %></p>
+</div>
